@@ -1,0 +1,40 @@
+<!doctype html> 
+<html>
+<head>
+<html lang="ru">
+<meta charset="utf-8">
+<title> Главная </title>
+</head>
+<body>
+<main>
+<div style="background:gold;width:150;height:100" id=mydiv><div id=myimg style="position:absolute"</div></div>
+</main>
+<script>
+ab2=0;ab3=0;x=1;y=1;
+pw=16; // Ширина изображения в пикселях (указать)
+ph=16; // Высота изображения в пикселях (указать)
+ 
+function dvigenie(){
+var elem1 = document.getElementById("mydiv");
+ww1 = elem1.offsetWidth;
+hh1 = elem1.offsetHeight;
+ll1 = 0;
+tt1 = 0;
+while (elem1){ll1 += elem1.offsetLeft;
+   tt1 += elem1.offsetTop;
+   elem1 = elem1.offsetParent;
+}
+ 
+ab2+=x;ab3+=y;
+if(ab3>=hh1-ph){y=-1};
+if(ab2>=ww1-pw){x=-2};
+if(ab3<=0){y=2};
+if(ab2<=0){x=1};
+document.getElementById("myimg").style.top=tt1+ab3;
+document.getElementById("myimg").style.left=ll1+ab2;
+}
+ 
+setInterval("dvigenie()",50);
+</script>
+</body>
+</html>
