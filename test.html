@@ -30,15 +30,15 @@
         let minOffset = -5;
         let maxOffset = 5;
         
-        var timeOut;
+        let timeOut;
         
         function random(min, max) {
           return Math.floor(Math.random() * (max - min + 1)) + min;
         }
         
         function motion(element, speed) {
-          var offsetTop = top + random(minOffset, maxOffset) * random(-1, 1);
-          var offsetLeft = left + random(minOffset, maxOffset) * random(-1, 1);
+          let offsetTop = top + random(minOffset, maxOffset) * random(-1, 1);
+          let offsetLeft = left + random(minOffset, maxOffset) * random(-1, 1);
           element.animate({'top': offsetTop + 'px', 'left': offsetLeft + 'px'}, speed);
           timeOut = setTimeout(motion(element, speed), speed);
         }
